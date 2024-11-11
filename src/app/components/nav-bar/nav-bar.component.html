@@ -1,0 +1,38 @@
+<header>
+  <nav>
+    <div class="logo">
+      <img src="../../../assets/img/logo.png" alt="Chess Institute Logo">
+    </div>
+    <ul class="nav-links">
+      <li [class.active]="currentSection === 'about'">
+        <a href="javascript:void(0)" (click)="scrollToSection('about')">About Us</a>
+      </li>
+      <li [class.active]="currentSection === 'contact'">
+        <a href="javascript:void(0)" (click)="scrollToSection('contact')">Contact Us</a>
+      </li>
+      <li [class.active]="currentSection === 'training-plan'">
+        <a href="javascript:void(0)" (click)="scrollToSection('training-plan')">Training Plans</a>
+      </li>
+      <li [class.active]="currentSection === 'coaching-team'">
+        <a href="javascript:void(0)" (click)="scrollToSection('coaching-team')">Coaching Teams</a>
+      </li>
+      <li [class.active]="currentSection === 'accomplishments'">
+        <a href="javascript:void(0)" (click)="scrollToSection('accomplishments')">Accomplishments Gallery</a>
+      </li>
+      <li [class.active]="currentSection === 'reviews'">
+        <a href="javascript:void(0)" (click)="scrollToSection('reviews')">Reviews</a>
+      </li>
+      <li [class.active]="currentSection === 'additional-resources'">
+        <a href="javascript:void(0)" (click)="scrollToSection('additional-resources')">Additional Resources</a>
+      </li>
+    </ul>
+    <div class="burger" (click)="toggleNav()">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+</header>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
