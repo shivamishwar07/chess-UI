@@ -14,7 +14,9 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
 import { AdditionalResourcesComponent } from './components/additional-resources/additional-resources.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FooterSectionComponent } from './components/footer-section/footer-section.component';
-
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from './environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,8 @@ import { FooterSectionComponent } from './components/footer-section/footer-secti
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     AppRoutingModule
   ],
   providers: [],

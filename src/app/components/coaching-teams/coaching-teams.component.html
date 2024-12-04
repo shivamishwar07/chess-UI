@@ -3,34 +3,25 @@
     <h2>Our Coaching Team</h2>
     <h3>Meet Our Expert Chess Coaches</h3>
     <div class="team-members d-flex justify-content-center">
-      <div class="team-member">
-        <div class="" style="padding: 0px 30px 0px 30px;">
+      <div class="team-member" *ngFor="let coach of coachingTeams">
+        <div style="padding: 0px 30px 0px 30px;">
           <img src="../../../assets/img/user.svg" alt="Coach">
-        <h4>G Karthik Gopal</h4>
-        <div>International Rating – 1864</div>
-        <div>Senior National Arbiter</div>
-        <div>Chess in Schools Trainer</div>
-        <div>National Instructor</div>
-        <div>Arena Grand Master</div>
+          <h4>{{ coach.name }}</h4>
+          <!-- Dynamically iterate over all 'des' keys -->
+          <div *ngFor="let key of getDescriptionKeys(coach)">
+            {{ coach[key] }}
+          </div>
         </div>
         <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
-      </div>
-      <div class="team-member">
-        <img src="../../../assets/img/user.svg" alt="Coach">
-        <h4>G Hema Chandra mouli</h4>
-        <div>International Rating – 1987</div>
-        <div>FIDE Arbiter</div>
-        <div>Chess in Schools Trainer</div>
-        <div>National Instructor</div>
-        <div>Arena Grand Master</div>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a [href]="coach.facebookUrl || coach.fbUrl" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a [href]="coach.xUrl" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a [href]="coach.linkedinUrl" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
       </div>
     </div>
