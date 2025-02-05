@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HeroSectionComponent } from './components/hero-section/hero-section.component';
-import { ContectUsComponent } from './components/contect-us/contect-us.component';
 import { TrainingPlansComponent } from './components/training-plans/training-plans.component';
 import { CoachingTeamsComponent } from './components/coaching-teams/coaching-teams.component';
 import { AccomplishmentsGalleryComponent } from './components/accomplishments-gallery/accomplishments-gallery.component';
@@ -17,23 +16,28 @@ import { FooterSectionComponent } from './components/footer-section/footer-secti
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from './environment';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ContactUsComponent } from './components/contect-us/contect-us.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     NavBarComponent,
     HeroSectionComponent,
-    ContectUsComponent,
     TrainingPlansComponent,
     CoachingTeamsComponent,
     AccomplishmentsGalleryComponent,
     ReviewsComponent,
     AdditionalResourcesComponent,
     AboutUsComponent,
-    FooterSectionComponent
+    FooterSectionComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AppRoutingModule
